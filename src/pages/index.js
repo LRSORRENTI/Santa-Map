@@ -32,10 +32,14 @@ export default function Home() {
 // The api stops in the year 2019, to get current date and time:
 
   // const currentDate = new Date(Date.now());
+  // Uncomment the above on Christmas to see the tracker 
+  // work in real time, for now I'll leave the below date 
+  // hardcoded for visual fidelity
+  
   const currentDate = new Date('2023-12-25T02:34:30.115Z');
   const currentYear = currentDate.getFullYear();
 
-  const destinations = data?.destinations.map((destination) => {
+    const destinations = data?.destinations.map((destination) => {
     const { arrival, departure } = destination;
   
     const arrivalDate = new Date(arrival);
