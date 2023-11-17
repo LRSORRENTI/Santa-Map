@@ -81,7 +81,7 @@ export default function Home() {
           </h1>
 
           <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
-            {({ TileLayer, Marker, Popup }) => (
+            {({ TileLayer, Marker, Popup }, Leaflet) => (
               <>
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -110,7 +110,13 @@ export default function Home() {
                         // Adding arrival and departure datetimes to Popup
                         // And when we reload the page and click on a pin, we should see all of our information!
             return (
-              <Marker key={id} position={[location.lat, location.lng]}>
+              <Marker key={id} 
+                      position={[location.lat, location.lng]}
+                      icon={Leaflet.icon({
+                        iconUrl: '/images/tree.png',
+                        // iconRetinaUrl: '/images/tree-marker-icon-2x.png',
+                        iconSize: [21, 21]
+                      })}>
               <Popup>
                 <strong>Location:</strong> { city }, { region }
                 <br />
