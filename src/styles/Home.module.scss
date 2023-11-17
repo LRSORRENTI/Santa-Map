@@ -1,14 +1,22 @@
+@font-face {
+  font-family: 'MoutainsOfChristmas';
+  src: url('/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf');
+}
+
+
 .title {
   font-size: 3rem;
   line-height: 1.15;
   text-align: center;
   margin: 0 0 1em;
+  font-family: 'MountainsOfChristmas';
 }
 
 .description {
   font-size: 1.5rem;
   line-height: 1.5;
   text-align: center;
+  text-decoration: dotted;
 }
 
 .view {
@@ -27,4 +35,8 @@
 
 .iconSantaIsHere {
   z-index: 9999!important;
+}
+
+.button {
+  background-color: red;
 }

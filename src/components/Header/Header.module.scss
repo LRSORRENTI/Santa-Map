@@ -1,10 +1,20 @@
 @import "@styles/settings/_settings";
 
+@font-face {
+  font-family: 'MountainsOfChristmas';
+  src: url('/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ... rest of your SCSS ...
+
+
 .header {
   width: 100%;
   font-size: 1em;
   color: white;
-  background-color: black;
+  background-color: rgb(63, 59, 59);
   padding: 1em 0;
   margin: 0;
 }
@@ -22,6 +32,8 @@
   font-size: 1.6em;
   font-weight: bold;
   margin: 0;
+  color: red;
+  font-family: 'MountainsOfChristmas';
 }
 
 .headerLogo {
