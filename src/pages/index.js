@@ -2,8 +2,8 @@ import Head from 'next/head';
 
 import useSWR from 'swr';
 
-// We could use fetch and store it in state,
-// use SWR which gives a cleaner 
+// We could use fetch and store data in state,
+// using SWR gives a cleaner 
 // way to manage that request.
 
 import Layout from '@components/Layout';
@@ -28,6 +28,19 @@ export default function Home() {
     'https://firebasestorage.googleapis.com/v0/b/santa-tracker-firebase.appspot.com/o/route%2Fsanta_en.json?alt=media&2018b',
     fetcher
   );
+  
+
+  // A review of what's happening, we're using the useSWR hook 
+  // which will give us some data fetching 
+  // features (caching, revalidation). 
+  // But we need to tell SWR 2 things: how to fetch the 
+  // data (fetcher) and where (our endpoint).
+
+  // And with that, we should have our data, 
+  // which we can now test by adding a console log. 
+  // There, when we load our page and look in the console, 
+  // we should see a bunch of destinations logged out:
+
   return (
     <Layout>
       <Head>
@@ -49,11 +62,18 @@ export default function Home() {
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 />
-                <Marker position={DEFAULT_CENTER}>
+                {/* <Marker position={DEFAULT_CENTER}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
-                </Marker>
+                </Marker> */}
+                   {data?.destinations?.map(({ id, location, city, region }) => {
+            return (
+                      <Marker key={id} position={[location.lat, location.lng]}>
+                      <Popup>{ city }, { region }</Popup>
+                      </Marker>
+                    )
+                })}
               </>
             )}
           </Map>
