@@ -29,6 +29,31 @@ export default function Home() {
     fetcher
   );
   
+// The api stops in the year 2019, to get current date and time:
+
+  const currentDate = new Date(Date.now());
+  const currentYear = currentDate.getFullYear();
+
+  const destinations = data?.destinations.map((destination) => {
+    const { arrival, departure } = destination;
+  
+    const arrivalDate = new Date(arrival);
+    const departureDate = new Date(departure);
+  
+    arrivalDate.setFullYear(currentYear);
+    departureDate.setFullYear(currentYear);
+  
+    // Mapping through each destination, ultimately creating a new array of destinations
+    // Getting the arrival and departure dates into a new Date object
+    // Using our currentYear value to adjust our arrival and departure
+    // Returning all the destination data with the updated values
+
+    return {
+      ...destination,
+      arrival: arrivalDate.getTime(),
+      departure:  departureDate.getTime(),
+    }
+  });
 
   // A review of what's happening, we're using the useSWR hook 
   // which will give us some data fetching 
@@ -55,7 +80,7 @@ export default function Home() {
             Next.js Leaflet Starter
           </h1>
 
-          <Map className={styles.homeMap} width="800" height="400" center={DEFAULT_CENTER} zoom={12}>
+          <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
             {({ TileLayer, Marker, Popup }) => (
               <>
                 <TileLayer
@@ -67,11 +92,33 @@ export default function Home() {
                     A pretty CSS3 popup. <br /> Easily customizable.
                   </Popup>
                 </Marker> */}
-                   {data?.destinations?.map(({ id, location, city, region }) => {
+                   {destinations?.map(({ id, arrival, departure, location, city, region }) => {
+                        const arrivalDate = new Date(arrival);
+                        const arrivalHours = arrivalDate.getHours()
+                        const arrivalMinutes = arrivalDate.getMinutes()
+                        const arrivalTime = `${arrivalHours}:${arrivalMinutes}`;
+
+                        const departureDate = new Date(departure);
+                        const departureHours = departureDate.getHours()
+                        const departureMinutes = departureDate.getMinutes()
+                        const departureTime = `${departureHours}:${departureMinutes}`;
+                        //Here we're:
+
+                        // Using the arrival and departure times to create new dates
+                        // Getting specific values for both date and time
+                        // Formatting the time
+                        // Adding arrival and departure datetimes to Popup
+                        // And when we reload the page and click on a pin, we should see all of our information!
             return (
-                      <Marker key={id} position={[location.lat, location.lng]}>
-                      <Popup>{ city }, { region }</Popup>
-                      </Marker>
+              <Marker key={id} position={[location.lat, location.lng]}>
+              <Popup>
+                <strong>Location:</strong> { city }, { region }
+                <br />
+                <strong>Arrival:</strong> { arrivalDate.toDateString() } @ { arrivalTime }
+                <br />
+                <strong>Departure:</strong> { arrivalDate.toDateString() } @ { departureTime }
+              </Popup>
+              </Marker>
                     )
                 })}
               </>
