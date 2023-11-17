@@ -93,6 +93,17 @@ export default function Home() {
                   </Popup>
                 </Marker> */}
                    {destinations?.map(({ id, arrival, departure, location, city, region }) => {
+                        // Starting off, let's figure out where Santa currently is.
+
+                        // For every destination, we have our arrival time and departure time, 
+                        //which we're already using in the Popup. We can compare those values to the current 
+                        // time to determine where he is.
+
+                        // Next, we need to dynamically set our icon URLs to 
+                        // use new icons in different time instances.
+
+                        let iconUrl = '/images/tree.png';
+
                         const arrivalDate = new Date(arrival);
                         const arrivalHours = arrivalDate.getHours()
                         const arrivalMinutes = arrivalDate.getMinutes()
@@ -102,6 +113,18 @@ export default function Home() {
                         const departureHours = departureDate.getHours()
                         const departureMinutes = departureDate.getMinutes()
                         const departureTime = `${departureHours}:${departureMinutes}`;
+                        
+                        const santaWasHere = currentDate.getTime() - departureDate.getTime() > 0;
+                        const santaIsHere = currentDate.getTime() - arrivalDate.getTime() > 0 && !santaWasHere
+                        
+                        if ( santaIsHere ) {
+                          iconUrl = '/images/santa.png';
+                        }
+                        
+                        if ( santaWasHere ) {
+                          iconUrl = '/images/present.png';
+                        }
+
                         //Here we're:
 
                         // Using the arrival and departure times to create new dates
@@ -113,7 +136,7 @@ export default function Home() {
               <Marker key={id} 
                       position={[location.lat, location.lng]}
                       icon={Leaflet.icon({
-                        iconUrl: '/images/tree.png',
+                        iconUrl,
                         // iconRetinaUrl: '/images/tree-marker-icon-2x.png',
                         iconSize: [21, 21]
                       })}>
