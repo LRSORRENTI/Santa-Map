@@ -31,7 +31,8 @@ export default function Home() {
   
 // The api stops in the year 2019, to get current date and time:
 
-  const currentDate = new Date(Date.now());
+  // const currentDate = new Date(Date.now());
+  const currentDate = new Date('2023-12-25T02:34:30.115Z');
   const currentYear = currentDate.getFullYear();
 
   const destinations = data?.destinations.map((destination) => {
@@ -117,8 +118,11 @@ export default function Home() {
                         const santaWasHere = currentDate.getTime() - departureDate.getTime() > 0;
                         const santaIsHere = currentDate.getTime() - arrivalDate.getTime() > 0 && !santaWasHere
                         
+                        let className = '';
+
                         if ( santaIsHere ) {
                           iconUrl = '/images/santa.png';
+                          className = `${className} ${styles.iconSantaIsHere}`;
                         }
                         
                         if ( santaWasHere ) {
@@ -138,7 +142,8 @@ export default function Home() {
                       icon={Leaflet.icon({
                         iconUrl,
                         // iconRetinaUrl: '/images/tree-marker-icon-2x.png',
-                        iconSize: [21, 21]
+                        iconSize: [21, 21],
+                        className
                       })}>
               <Popup>
                 <strong>Location:</strong> { city }, { region }
