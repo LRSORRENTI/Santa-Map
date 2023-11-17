@@ -1,5 +1,11 @@
 import Head from 'next/head';
 
+import useSWR from 'swr';
+
+// We could use fetch and store it in state,
+// use SWR which gives a cleaner 
+// way to manage that request.
+
 import Layout from '@components/Layout';
 import Section from '@components/Section';
 import Container from '@components/Container';
@@ -10,7 +16,18 @@ import styles from '@styles/Home.module.scss';
 
 const DEFAULT_CENTER = [38.907132, -77.036546]
 
+// And to use our newly imported SWR hook,
+// we have two parts, where first we
+// define our "fetch" function, 
+// which is essentially the abstracted request logic.
+
+const fetcher = (url) => fetch(url).then((res) => res.json());
+
 export default function Home() {
+  const { data } = useSWR(
+    'https://firebasestorage.googleapis.com/v0/b/santa-tracker-firebase.appspot.com/o/route%2Fsanta_en.json?alt=media&2018b',
+    fetcher
+  );
   return (
     <Layout>
       <Head>
