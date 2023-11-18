@@ -83,7 +83,7 @@ export default function Home() {
       <Section>
         <Container>
           <h1 className={styles.title}>
-            Santa Tracker
+            Where is Santa Claus?
           </h1>
 
           <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
