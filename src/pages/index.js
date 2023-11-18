@@ -168,9 +168,9 @@ export default function Home() {
             )}
           </Map>
                 
-          <h1 className={styles.titleTwo}>
-            GITHUB
-          </h1>
+          {/* <h1 className={styles.titleTwo}>
+          https://github.com/LRSORRENTI/Santa-Map
+          </h1> */}
         </Container>
         
       </Section>
