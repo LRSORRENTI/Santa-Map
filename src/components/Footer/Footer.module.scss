@@ -2,9 +2,10 @@
 
 .footer {
   width: 100%;
-  color: white;
-  background-color: black;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
   padding: 1.2em 0;
+  border: 1px solid red;
 
   a {
     color: inherit;
@@ -20,6 +21,7 @@
 
   }
 }
+
 
 .footerContainer {
   display: flex;

@@ -80,11 +80,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section>
+      <Section className="section">
         <Container>
           <h1 className={styles.title}>
             Where is Santa Claus?
           </h1>
+
 
           <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
             {({ TileLayer, Marker, Popup }, Leaflet) => (
@@ -167,13 +168,11 @@ export default function Home() {
             )}
           </Map>
                 
-          <p className={styles.description}>
-              yes
-          </p>
-          <p className={styles.view}>
-            <Button className="btn">View</Button>
-          </p>
+          <h1 className={styles.titleTwo}>
+            GITHUB
+          </h1>
         </Container>
+        
       </Section>
     </Layout>
   )
