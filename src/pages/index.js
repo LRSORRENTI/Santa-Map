@@ -11,6 +11,7 @@ import Section from '@components/Section';
 import Container from '@components/Container';
 import Map from '@components/Map';
 import Button from '@components/Button';
+import IdBar from '@components/IdBar/IdBar';
 import styles from '@styles/Home.module.scss';
 
 const MAPBOX = process.env.MAPBOX_API_KEY;
@@ -85,7 +86,7 @@ export default function Home() {
           <h1 className={styles.title}>
             Where is Santa Claus?
           </h1>
-
+          <IdBar/>
 
           <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
             {({ TileLayer, Marker, Popup }, Leaflet) => (
