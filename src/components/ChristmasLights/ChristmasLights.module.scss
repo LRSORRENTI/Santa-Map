@@ -69,7 +69,7 @@
 
 @keyframes even-flash {
     0%, 100% {
-        background: rgba(255,0,0,1); 
+        background: rgb(255, 33, 33); 
         box-shadow: 0px 2px 20px 4px rgba(255,0,0,1); 
     }
     50% {
@@ -88,6 +88,45 @@
         box-shadow: 0px 2px 20px 4px rgba(50,205,50,1);
     }
 }
+
+@keyframes blue-flash {
+    0%, 100% {
+      background: rgb(0, 255, 255); 
+      box-shadow: 0px 2px 20px 4px rgba(0,0,255,1); 
+    }
+    50% {
+      background: rgba(0, 255, 255,0.5); 
+      box-shadow: 0px 2px 20px 4px rgba(0,0,255,0.3); 
+    }
+  }
+  
+  @keyframes yellow-flash {
+    0%, 100% {
+      background: rgb(255, 196, 0); 
+      box-shadow: 0px 2px 20px 4px rgba(255,255,0,1); 
+    }
+    50% {
+      background: rgba(255,196,0,0.5); 
+      box-shadow: 0px 2px 20px 4px rgba(255,255,0,0.3); 
+    }
+  }
+  
+  .green {
+    animation-name: odd-flash;
+  }
+
+  .red {
+    animation-name: even-flash;
+  }
+
+  .blue {
+    animation-name: blue-flash;
+  }
+  
+  .yellow {
+    animation-name: yellow-flash;
+  }
+  
 
 .wire {
     text-align: center;
