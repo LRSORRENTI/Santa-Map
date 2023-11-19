@@ -13,6 +13,7 @@ import Map from '@components/Map';
 import Button from '@components/Button';
 import IdBar from '@components/IdBar/IdBar';
 import styles from '@styles/Home.module.scss';
+import ChristmasLights from '@components/ChristmasLights/ChristmasLights';
 
 const MAPBOX = process.env.MAPBOX_API_KEY;
 
@@ -80,9 +81,9 @@ export default function Home() {
         <meta name="description" content="Create mapping apps with Next.js Leaflet Starter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <Section className="section">
         <Container>
+        <ChristmasLights/>
           <h1 className={styles.title}>
             Where is Santa Claus?
           </h1>
@@ -175,6 +176,7 @@ export default function Home() {
         </Container>
         
       </Section>
+      
     </Layout>
   )
 }
