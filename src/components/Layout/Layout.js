@@ -11,9 +11,9 @@ const Layout = ({ children, className, ...rest }) => {
       <Head>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
+      {/* <Header /> */}
       <main className={styles.main}>{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };

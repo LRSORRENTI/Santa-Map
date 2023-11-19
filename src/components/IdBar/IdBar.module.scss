@@ -1,0 +1,36 @@
+@import "@styles/settings/_settings";
+
+@font-face {
+  font-family: 'MountainsOfChristmas';
+  src: url('/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+.IdBar {
+    display: flex;
+    width: 200px;
+    flex-direction: column;
+    margin: auto;
+    margin-bottom: 24px;
+    font-family: 'MountainsOfChristmas';
+    background-color: #B3000C;
+    color: #FFFF;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    border: 5px solid rgb(0, 179, 69);
+}
+
+.p {
+    font-family: 'MountainsOfChristmas';
+    color: white;
+    font-size: 20px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+    font-weight: bold;
+}
+
+.tree {
+    margin-left: 5px;
+}

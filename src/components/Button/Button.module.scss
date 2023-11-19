@@ -1,13 +1,23 @@
 @import "@styles/settings/_settings";
 
+@import "@styles/settings/_settings";
+
+@font-face {
+  font-family: 'MountainsOfChristmas';
+  src: url('/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 .button {
   display: inline-flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 1em;
+  font-size: 2em;
   font-weight: bold;
-  font-family: inherit;
+  font-family: 'MountainsOfChristmas';
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;

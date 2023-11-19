@@ -11,8 +11,10 @@ import Section from '@components/Section';
 import Container from '@components/Container';
 import Map from '@components/Map';
 import Button from '@components/Button';
-
+import IdBar from '@components/IdBar/IdBar';
 import styles from '@styles/Home.module.scss';
+
+const MAPBOX = process.env.MAPBOX_API_KEY;
 
 const DEFAULT_CENTER = [38.907132, -77.036546]
 
@@ -35,7 +37,7 @@ export default function Home() {
   // Uncomment the above on Christmas to see the tracker 
   // work in real time, for now I'll leave the below date 
   // hardcoded for visual fidelity
-  
+
   const currentDate = new Date('2023-12-25T02:34:30.115Z');
   const currentYear = currentDate.getFullYear();
 
@@ -74,22 +76,26 @@ export default function Home() {
   return (
     <Layout>
       <Head>
-        <title>Next.js Leaflet Starter</title>
+        <title>Santa Tracker</title>
         <meta name="description" content="Create mapping apps with Next.js Leaflet Starter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Section>
+      <Section className="section">
         <Container>
           <h1 className={styles.title}>
-            Next.js Leaflet Starter
+            Where is Santa Claus?
           </h1>
+          <IdBar/>
 
           <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
             {({ TileLayer, Marker, Popup }, Leaflet) => (
               <>
+              
                 <TileLayer
-                  url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                  url="https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVrZS1ycyIsImEiOiJjbHAycms3Z2kwcm93MmpvaXZ3cWMyZjV4In0.QcvqbRMVEdnnbOSgTGwwwg"
+                  // url="https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVrZS1ycyIsImEiOiJjbHAycms3Z2kwcm93MmpvaXZ3cWMyZjV4In0.QcvqbRMVEdnnbOSgTGwwwg"
+                  // url={`https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=${MAPBOX}`}
                   attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 />
                 {/* <Marker position={DEFAULT_CENTER}>
@@ -162,15 +168,12 @@ export default function Home() {
               </>
             )}
           </Map>
-
-          <p className={styles.description}>
-              Santa Tracker
-          </p>
-
-          <p className={styles.view}>
-            <Button>View</Button>
-          </p>
+                
+          {/* <h1 className={styles.titleTwo}>
+          https://github.com/LRSORRENTI/Santa-Map
+          </h1> */}
         </Container>
+        
       </Section>
     </Layout>
   )

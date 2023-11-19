@@ -1,9 +1,18 @@
+
+@font-face {
+  font-family: 'MountainsOfChristmas';
+  src: url('/fonts/Mountains_of_Christmas/MountainsofChristmas-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: --apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    
 }
 
 a {
@@ -19,3 +28,30 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+
+.anchor {
+  font-size: 1rem;
+  line-height: 1.15;
+  text-align: center;
+  margin: 0 0 1em;
+  font-family: 'MountainsOfChristmas';
+  background-color: #B3000C;
+  color: #FFFF;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border: 5px solid rgb(0, 179, 69);
+}
+
+// @media (max-width: 540px) {
+//   .anchor {
+//     font-size: .5rem;
+//   }
+// }
+
+// @media (max-width: 400px) {
+//   .anchor {
+//     font-size: .5rem;
+//   }
+// }
