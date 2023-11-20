@@ -14,8 +14,11 @@ import Button from '@components/Button';
 import IdBar from '@components/IdBar/IdBar';
 import styles from '@styles/Home.module.scss';
 import ChristmasLights from '@components/ChristmasLights/ChristmasLights';
+import dotenv from 'dotenv/config'
 
-const MAPBOX = process.env.MAPBOX_API_KEY;
+
+const NEXT_PUBLIC_MAPBOX_API_KEY = process.env.NEXT_PUBLIC_MAPBOX_API_KEY;
+const tileLayerUrl = `https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=${NEXT_PUBLIC_MAPBOX_API_KEY}`
 
 const DEFAULT_CENTER = [38.907132, -77.036546]
 
@@ -74,6 +77,7 @@ export default function Home() {
   // There, when we load our page and look in the console, 
   // we should see a bunch of destinations logged out:
 
+
   return (
     <Layout>
       <Head>
@@ -81,7 +85,6 @@ export default function Home() {
         <meta name="description" content="Create mapping apps with Next.js Leaflet Starter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ChristmasLights/>
       <Section className="section">
         <Container>
         <ChristmasLights/>
@@ -93,13 +96,8 @@ export default function Home() {
           <Map className={styles.homeMap} width="800" height="400" center={[0, 0]} zoom={1}>
             {({ TileLayer, Marker, Popup }, Leaflet) => (
               <>
-              
-                <TileLayer
-                  url="https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVrZS1ycyIsImEiOiJjbHAycms3Z2kwcm93MmpvaXZ3cWMyZjV4In0.QcvqbRMVEdnnbOSgTGwwwg"
-                  // url="https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVrZS1ycyIsImEiOiJjbHAycms3Z2kwcm93MmpvaXZ3cWMyZjV4In0.QcvqbRMVEdnnbOSgTGwwwg"
-                  // url={`https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=${MAPBOX}`}
-                  // attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
-                />
+               
+                <TileLayer url={tileLayerUrl}/>
                 {/* <Marker position={DEFAULT_CENTER}>
                   <Popup>
                     A pretty CSS3 popup. <br /> Easily customizable.
