@@ -76,7 +76,7 @@ export default function Home() {
   // which we can now test by adding a console log. 
   // There, when we load our page and look in the console, 
   // we should see a bunch of destinations logged out:
-  console.log('Environment Variable:', process.env.NEXT_PUBLIC_MAPBOX_API_KEY);
+
 
   return (
     <Layout>
