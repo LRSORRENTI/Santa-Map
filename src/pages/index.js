@@ -81,6 +81,7 @@ export default function Home() {
         <meta name="description" content="Create mapping apps with Next.js Leaflet Starter" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <ChristmasLights/>
       <Section className="section">
         <Container>
         <ChristmasLights/>
