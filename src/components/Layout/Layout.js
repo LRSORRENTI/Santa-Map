@@ -10,6 +10,8 @@ const Layout = ({ children, className, ...rest }) => {
     <div className={styles.layout}>
       <Head>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=0"/>
+
       </Head>
       {/* <Header /> */}
       <main className={styles.main}>{children}</main>
