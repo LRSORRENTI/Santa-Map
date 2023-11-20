@@ -111,6 +111,17 @@
     }
   }
   
+  @keyframes pink-flash {
+    0%, 100% {
+      background: rgb(255, 0, 157); 
+      box-shadow: 0px 2px 20px 4px  rgb(255, 0, 157, 1); 
+    }
+    50% {
+      background:  rgba(255, 0, 157, 0.5); 
+      box-shadow: 0px 2px 20px 4px  rgba(255, 0, 157, 0.3); 
+    }
+  }
+
   .green {
     animation-name: odd-flash;
   }
@@ -127,6 +138,9 @@
     animation-name: yellow-flash;
   }
   
+  .pink {
+    animation-name: pink-flash
+  }
 
 .wire {
     text-align: center;

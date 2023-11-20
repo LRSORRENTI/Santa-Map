@@ -3,11 +3,12 @@ import styles from './ChristmasLights.module.scss';
 
 const ChristmasLights = () => {
   const getColorClass = (index) => {
-    switch (index % 4) { // Modulus 4 for four different colors
+    switch (index % 5) { // Modulus 5 for four different colors
       case 0: return styles.red;
       case 1: return styles.green;
       case 2: return styles.blue;
       case 3: return styles.yellow;
+      case 4: return styles.pink;
       default: return ''; // Default case, should not occur
     }
   };

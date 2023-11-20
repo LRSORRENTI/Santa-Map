@@ -97,7 +97,7 @@ export default function Home() {
                   url="https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVrZS1ycyIsImEiOiJjbHAycms3Z2kwcm93MmpvaXZ3cWMyZjV4In0.QcvqbRMVEdnnbOSgTGwwwg"
                   // url="https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoibHVrZS1ycyIsImEiOiJjbHAycms3Z2kwcm93MmpvaXZ3cWMyZjV4In0.QcvqbRMVEdnnbOSgTGwwwg"
                   // url={`https://api.mapbox.com/styles/v1/luke-rs/clp2rcwm700y601qndjnf4wxr/tiles/256/{z}/{x}/{y}@2x?access_token=${MAPBOX}`}
-                  attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
+                  // attribution="&copy; <a href=&quot;http://osm.org/copyright&quot;>OpenStreetMap</a> contributors"
                 />
                 {/* <Marker position={DEFAULT_CENTER}>
                   <Popup>
