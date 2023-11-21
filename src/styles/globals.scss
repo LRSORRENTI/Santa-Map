@@ -91,3 +91,10 @@ img {
   text-decoration: none;
   color: #fff;
 }
+
+
+.leaflet-bar a:hover,
+.leaflet-bar a:focus {
+	background-color: rgb(0, 179, 69);
+  color: #fff;
+	}
