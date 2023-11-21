@@ -75,7 +75,19 @@ img {
   display: none;
 }
 
-.leaflet-control-zoom-in, .leaflet-control-zoom-out {
-  background-color:  #B3000C;
-  color: #FFF;
+// .leaflet-control-zoom-in, .leaflet-control-zoom-out {
+//   background-color:  #B3000C;
+//   color: #FFF;
+// }
+
+.leaflet-bar a {
+  background-color: rgb(255, 33, 33);
+  border-bottom: 1px solid #ccc;
+  width: 26px;
+  height: 26px;
+  line-height: 26px;
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
 }
