@@ -63,3 +63,10 @@ img {
 //     font-size: .5rem;
 //   }
 // }
+
+.leaflet-container .leaflet-control-attribution {
+	background: #fff;
+	background: rgba(255, 255, 255, 0.8);
+	margin: 0;
+	display: none;
+	}
